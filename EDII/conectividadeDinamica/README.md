@@ -1,10 +1,11 @@
-Após entender o problema da conectividade dinâmica exposto na <a href="https://gitlab.com/ds143-alexkutzke/material/-/blob/main/aula_01.md#aula-01-estudo-de-caso-union-find">primeira aula</a>, utilize o programa <a href="https://gitlab.com/ds143-alexkutzke/material/-/blob/main/01/uf.c">uf.c</a> e faça 
-uma implementação para os métodos union e find de modo que o problema da conectividade dinâmica seja resolvido pelo programa.
+## Exercício proposto
+
+Após entender o problema da conectividade dinâmica exposto na [primeira aula](https://gitlab.com/ds143-alexkutzke/material/-/blob/main/aula_01.md#aula-01-estudo-de-caso-union-find), utilize o programa [uf.c](https://gitlab.com/ds143-alexkutzke/material/-/blob/main/01/uf.c) e faça  uma implementação para os métodos union e find de modo que o problema da conectividade dinâmica seja resolvido pelo programa.
 
 Lembre-se que o programa irá ler o número de itens e, após, irá ler uma sequência de pares de inteiros até que ao menos um valor negativo seja lido.
 
 Por exemplo, para a seguinte entrada:
-```bash
+```
 10
 4 3
 3 8
@@ -20,9 +21,8 @@ Por exemplo, para a seguinte entrada:
 -1 -1
 ```
 
-
 A saída deve ser:
-```bash
+```
 4 3
 3 8
 6 5
