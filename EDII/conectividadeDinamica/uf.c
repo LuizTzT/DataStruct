@@ -1,3 +1,6 @@
+// Funcionando instantaneamente com as entradas tinyUF.txt e mediumUF.txt, porém com a entrada 
+// largeUF.txt extremamente lenta
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -44,20 +47,28 @@ int connected_UF(UF *uf, int p, int q)
 
 int find_UF(UF *uf, int p)
 {
-    for (int i = 0; i < uf->count; i++)
+    int i;
+    for (i = 0; i < uf->count; i++)
     {
-        if (p == uf->id[i])
+        if (uf->id[p] == uf->id[i])
         {
-            return 0;
+            return uf->id[i];
         }
     }
-    return 1;
+    return 0;
 }
 
 void union_UF(UF *uf, int p, int q)
 {
-    uf->id = p;
-    return;
+    int pid = uf->id[p];
+    int i;
+    for (i = 0; i < uf->count; i++)
+    {
+        if (pid == uf->id[i])
+        {
+            uf->id[i] = uf->id[q];
+        }
+    }
 }
 
 int main()
