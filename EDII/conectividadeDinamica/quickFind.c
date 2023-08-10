@@ -86,7 +86,7 @@ int main()
 
         if (!connected_UF(uf, p, q))
         {
-            // printf("%d %d\n", p, q); comentado para verificar a eficiência do código
+             printf("%d %d\n", p, q);
             union_UF(uf, p, q);
         }
 
