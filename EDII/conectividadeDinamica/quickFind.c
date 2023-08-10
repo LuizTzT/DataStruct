@@ -53,26 +53,20 @@ int connected_UF(UF *uf, int p, int q)
 
 int find_UF(UF *uf, int p)
 {
-    int i;
-    for (i = 0; i < uf->count; i++)
-    {
-        if (uf->id[p] == uf->id[i])
-        {
-            return uf->id[i];
-        }
-    }
-    return 0;
+   return uf->id[p];
 }
 
 void union_UF(UF *uf, int p, int q)
 {
-    int pid = uf->id[p];
     int i;
+    int p_value = uf->id[p];
+    int q_value = uf->id[q];
+
     for (i = 0; i < uf->count; i++)
     {
-        if (pid == uf->id[i])
+        if (p_value == uf->id[i])
         {
-            uf->id[i] = uf->id[q];
+            uf->id[i] = q_value;
         }
     }
 }
@@ -92,7 +86,7 @@ int main()
 
         if (!connected_UF(uf, p, q))
         {
-            printf("%d %d\n", p, q);
+            // printf("%d %d\n", p, q); comentado para verificar a eficiência do código
             union_UF(uf, p, q);
         }
 
