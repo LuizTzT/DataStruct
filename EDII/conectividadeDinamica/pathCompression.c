@@ -1,5 +1,4 @@
-// Utilização do algoritimo de pathCompreension, porém ainda sem sucesso na execução instantanea da 
-// entrada largeUF.txt
+// Execução com a entrada largeUF em 1 segundo.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -40,9 +39,8 @@ int find_UF(UF *uf, int p) {
     // Compressão de Caminho Iterativa
     // aponta todos os nodes para o root, reduzindo a altura da árvore
     while (p != root) {
-        int next = uf->id[p];
-        uf->id[p] = root;
-        p = next;
+        uf->id[p] = uf->id[uf->id[p]];
+        p = uf->id[p];
     }
 
     return root;
@@ -75,7 +73,7 @@ int main() {
 
     while (scanf("%d %d", &p, &q) == 2 && p >= 0 && q >= 0) {
         if (!connected_UF(uf, p, q)) {
-            printf("%d %d\n", p, q);
+            // printf("%d %d\n", p, q); comentado para verificar a eficiência do código
             union_UF(uf, p, q);
         }
     }
